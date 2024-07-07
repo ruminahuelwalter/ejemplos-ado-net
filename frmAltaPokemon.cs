@@ -28,27 +28,30 @@ namespace ejemplos_ado_net
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Pokemon poke = new Pokemon();
+            //Pokemon poke = new Pokemon();
             PokemonNegocio negocio = new PokemonNegocio(); 
             try
             {
-                poke.Numero = int.Parse(txtNumero.Text);   
-                poke.Nombre = txtNombre.Text;
-                poke.Descripcion = txtDescripcion.Text;
-                poke.UrlImagen = txtUrlImagen.Text;
-                poke.Tipo = (Elemento)cboTipo.SelectedItem;
-                poke.Debilidad = (Elemento)cboDebilidad.SelectedItem;
+                if (pokemon == null)
+                    pokemon = new Pokemon();
+
+                pokemon.Numero = int.Parse(txtNumero.Text);   
+                pokemon.Nombre = txtNombre.Text;
+                pokemon.Descripcion = txtDescripcion.Text;
+                pokemon.UrlImagen = txtUrlImagen.Text;
+                pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
+                pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
                 //leo el elemento seleccionado y lo transformo a Elemento
 
                 if (pokemon.Id !=0)
                 {
-                    negocio.agregar(poke);
-                    MessageBox.Show("Agregado exitosamente");
+                    negocio.modificar(pokemon);
+                    MessageBox.Show("Modificado exitosamente");
                 }
                 else
                 {
-                    negocio.modificar(pokemon);
-                    MessageBox.Show("Modificado exitosamente");
+                    negocio.agregar(pokemon);
+                    MessageBox.Show("Agregado exitosamente");
                 }
 
                 Close();
