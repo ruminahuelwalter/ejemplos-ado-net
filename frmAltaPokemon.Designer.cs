@@ -43,13 +43,14 @@
             this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.pbxPokemon = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 46);
+            this.label1.Location = new System.Drawing.Point(35, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(117, 46);
+            this.txtNumero.Location = new System.Drawing.Point(108, 31);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(121, 20);
             this.txtNumero.TabIndex = 0;
@@ -65,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 72);
+            this.label2.Location = new System.Drawing.Point(35, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 2;
@@ -74,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 98);
+            this.label3.Location = new System.Drawing.Point(35, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 3;
@@ -82,21 +83,21 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(117, 72);
+            this.txtNombre.Location = new System.Drawing.Point(108, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(117, 98);
+            this.txtDescripcion.Location = new System.Drawing.Point(108, 83);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(47, 238);
+            this.btnAceptar.Location = new System.Drawing.Point(38, 250);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -106,7 +107,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(163, 238);
+            this.btnCancelar.Location = new System.Drawing.Point(154, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -117,7 +118,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(44, 165);
+            this.lblTipo.Location = new System.Drawing.Point(35, 177);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(31, 13);
             this.lblTipo.TabIndex = 8;
@@ -126,7 +127,7 @@
             // lblDebilidad
             // 
             this.lblDebilidad.AutoSize = true;
-            this.lblDebilidad.Location = new System.Drawing.Point(44, 204);
+            this.lblDebilidad.Location = new System.Drawing.Point(35, 216);
             this.lblDebilidad.Name = "lblDebilidad";
             this.lblDebilidad.Size = new System.Drawing.Size(54, 13);
             this.lblDebilidad.TabIndex = 9;
@@ -136,7 +137,7 @@
             // 
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(117, 162);
+            this.cboTipo.Location = new System.Drawing.Point(108, 174);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(121, 21);
             this.cboTipo.TabIndex = 4;
@@ -145,14 +146,14 @@
             // 
             this.cboDebilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDebilidad.FormattingEnabled = true;
-            this.cboDebilidad.Location = new System.Drawing.Point(117, 204);
+            this.cboDebilidad.Location = new System.Drawing.Point(108, 216);
             this.cboDebilidad.Name = "cboDebilidad";
             this.cboDebilidad.Size = new System.Drawing.Size(121, 21);
             this.cboDebilidad.TabIndex = 5;
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(117, 124);
+            this.txtUrlImagen.Location = new System.Drawing.Point(108, 109);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(121, 20);
             this.txtUrlImagen.TabIndex = 3;
@@ -161,7 +162,7 @@
             // lblUrlImagen
             // 
             this.lblUrlImagen.AutoSize = true;
-            this.lblUrlImagen.Location = new System.Drawing.Point(44, 124);
+            this.lblUrlImagen.Location = new System.Drawing.Point(35, 109);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(58, 13);
             this.lblUrlImagen.TabIndex = 12;
@@ -169,18 +170,29 @@
             // 
             // pbxPokemon
             // 
-            this.pbxPokemon.Location = new System.Drawing.Point(268, 46);
+            this.pbxPokemon.Location = new System.Drawing.Point(256, 31);
             this.pbxPokemon.Name = "pbxPokemon";
-            this.pbxPokemon.Size = new System.Drawing.Size(263, 214);
+            this.pbxPokemon.Size = new System.Drawing.Size(266, 215);
             this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPokemon.TabIndex = 14;
             this.pbxPokemon.TabStop = false;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(164, 135);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(65, 23);
+            this.btnAgregarImagen.TabIndex = 15;
+            this.btnAgregarImagen.Text = "Agregar";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // frmAltaPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 298);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pbxPokemon);
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.PictureBox pbxPokemon;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }

@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.Configuration;
 
 namespace ejemplos_ado_net
 {
     public partial class frmAltaPokemon : Form
     {
         private Pokemon pokemon = null;
+        OpenFileDialog archivo = null;
         //pasaje de parametros entre ventanas
         public frmAltaPokemon()
         {
@@ -29,13 +32,13 @@ namespace ejemplos_ado_net
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //Pokemon poke = new Pokemon();
-            PokemonNegocio negocio = new PokemonNegocio(); 
+            PokemonNegocio negocio = new PokemonNegocio();
             try
             {
                 if (pokemon == null)
                     pokemon = new Pokemon();
 
-                pokemon.Numero = int.Parse(txtNumero.Text);   
+                pokemon.Numero = int.Parse(txtNumero.Text);
                 pokemon.Nombre = txtNombre.Text;
                 pokemon.Descripcion = txtDescripcion.Text;
                 pokemon.UrlImagen = txtUrlImagen.Text;
@@ -43,7 +46,7 @@ namespace ejemplos_ado_net
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
                 //leo el elemento seleccionado y lo transformo a Elemento
 
-                if (pokemon.Id !=0)
+                if (pokemon.Id != 0)
                 {
                     negocio.modificar(pokemon);
                     MessageBox.Show("Modificado exitosamente");
@@ -52,6 +55,12 @@ namespace ejemplos_ado_net
                 {
                     negocio.agregar(pokemon);
                     MessageBox.Show("Agregado exitosamente");
+                }
+
+                // Guardo imagen si la levantó localmente:
+                if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
                 }
 
                 Close();
@@ -119,6 +128,24 @@ namespace ejemplos_ado_net
             {
 
                 pbxPokemon.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg |*.jpg |png |*.png";
+            
+            if (archivo.ShowDialog() == DialogResult.OK) {
+                // Guarda la ruta completa del archivo
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+                // Guardo la imagen
+                // File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
+
+
             }
         }
     }
