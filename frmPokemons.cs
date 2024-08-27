@@ -232,7 +232,7 @@ namespace winform_app
             else
             {
                 cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Comienza Con");
+                cboCriterio.Items.Add("Comienza con");
                 cboCriterio.Items.Add("Termina con");
                 cboCriterio.Items.Add("Contiene");
             }
